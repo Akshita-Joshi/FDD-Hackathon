@@ -144,12 +144,13 @@ class _ChatScreenState extends State<ChatScreen> {
                           .collection('chats')
                           .doc(widget.chatRoomId)
                           .collection('doubts')
-                          .orderBy('time', descending: false)
+                          .orderBy('servertimestamp', descending: true)
                           .snapshots(),
                       builder: (BuildContext context,
                           AsyncSnapshot<QuerySnapshot> snapshot) {
                         if (snapshot.data != null) {
                           return ListView.builder(
+                              reverse: true,
                               physics: BouncingScrollPhysics(),
                               itemCount: snapshot.data!.docs.length,
                               itemBuilder: (BuildContext context, index) {
@@ -429,10 +430,8 @@ class _TextInputState extends State<TextInput> {
           children: [
             InkWell(
               onTap: () {
-                setState(() {
-                  type = 'forumDoubt';
-                });
                 uploadImage();
+                //onSendMessage();
               },
               child: Container(
                 height: height * 0.028, //24

@@ -1,5 +1,3 @@
-// @dart=2.9
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -12,7 +10,7 @@ import 'package:mentor_mate/welcome_and_other.dart';
 
 //import 'package:splashscreen/splashscreen.dart';
 Future<void> _messageHandler(RemoteMessage message) async {
-  print('background message ${message.notification.body}');
+  print('background message ${message.notification!.body}');
 }
 
 Future main() async {
@@ -38,11 +36,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        builder: (BuildContext context, Widget widget) {
+        builder: (BuildContext context, Widget? widget) {
           ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
             return Container();
           };
-          return widget;
+          return widget!;
         },
         theme: ThemeData(
           // This is the theme of your application.

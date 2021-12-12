@@ -165,11 +165,15 @@ class _StudentHomePageState extends State<StudentHomePage> {
                         },
                         child: map['${widget.userMap['year']}'].toString() !=
                                 'null'
-                            ? Container(
-                                child: Text(
-                                map['${widget.userMap['year']}'].toString(),
-                                style: _textStyle(),
-                              ))
+                            ? Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 6.0),
+                                child: Container(
+                                    child: Text(
+                                  map['${widget.userMap['year']}'].toString(),
+                                  style: _textStyle(),
+                                )),
+                              )
                             : Container(
                                 height: 0,
                               ),
@@ -310,7 +314,7 @@ class _StudentHomeState extends State<StudentHome> {
           indicatorColor: Colors.black,
           enableShadow: false,
           activeColor: Colors.black,
-          currentIndex: _currentPage,
+          currentIndex: _currentPage!,
           onTap: (index) {
             setState(() {
               _currentPage = index;
@@ -330,7 +334,7 @@ class _StudentHomeState extends State<StudentHome> {
                     color: Colors.black,
                   ),
                 ),
-                icon: PhosphorIcons.house_bold),
+                icon: Icon(PhosphorIcons.house_bold)),
             TitledNavigationBarItem(
                 title: Text(
                   'Forums',
@@ -341,7 +345,7 @@ class _StudentHomeState extends State<StudentHome> {
                     color: Colors.black,
                   ),
                 ),
-                icon: PhosphorIcons.chats_bold),
+                icon: Icon(PhosphorIcons.chats_bold)),
           ]),
     );
   }
@@ -495,7 +499,7 @@ class _TeacherHomeState extends State<TeacherHome>
           indicatorColor: Colors.black,
           enableShadow: false,
           activeColor: Colors.black,
-          currentIndex: _currentIndex,
+          currentIndex: _currentIndex!,
           onTap: (index) {
             setState(() {
               _currentIndex = index;
@@ -515,7 +519,7 @@ class _TeacherHomeState extends State<TeacherHome>
                     color: Colors.black,
                   ),
                 ),
-                icon: PhosphorIcons.house_bold),
+                icon: Icon(PhosphorIcons.house_bold)),
             TitledNavigationBarItem(
                 title: Text(
                   'Forums',
@@ -526,7 +530,7 @@ class _TeacherHomeState extends State<TeacherHome>
                     color: Colors.black,
                   ),
                 ),
-                icon: PhosphorIcons.chats_bold),
+                icon: Icon(PhosphorIcons.chats_bold)),
           ]),
 
       // floatingActionButton: Padding(

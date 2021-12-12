@@ -214,6 +214,8 @@ void uploadImage() async {
 
       if (type == 'forumDoubt') {
         onProvideSolution(docId);
+      } else {
+        onSendMessage();
       }
     } else {
       print('No Path Received');

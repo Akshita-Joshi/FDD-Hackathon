@@ -572,7 +572,7 @@ class _ForumChatScreenState extends State<ForumChatScreen> {
                     height: 80,
                     width: width,
                     color: grey,
-                    child: TextInput(docId: widget.chatRoomId),
+                    child: TextInputForum(docId: widget.chatRoomId),
                   )
                 : Container(),
           )
@@ -675,6 +675,145 @@ class _ForumMessageState extends State<ForumMessage> {
                       fontSize: width * 0.035, //14
                       color: Colors.black.withOpacity(0.3))),
             ),*/
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TextInputForum extends StatefulWidget {
+  final String? docId;
+  const TextInputForum({this.docId});
+  @override
+  _TextInputForumState createState() => _TextInputForumState();
+}
+
+class _TextInputForumState extends State<TextInputForum> {
+  /*File? _image;
+  final _picker = ImagePicker();*/
+  /*void uploadImage() async {
+    final _storage = FirebaseStorage.instance;
+    final _picker = ImagePicker();
+    PickedFile image;
+
+    //Check Permissions
+    await Permission.photos.request();
+
+    var permissionStatus = await Permission.photos.status;
+
+    if (permissionStatus.isGranted) {
+      //Select Image
+      image = (await _picker.getImage(source: ImageSource.gallery))!;
+      var file = File(image.path);
+      var filename = image.path.split('/').last;
+
+      if (image != null) {
+        setState(() {
+          loader = true;
+        });
+        //Upload to Firebase
+        var snapshot = await _storage
+            .ref()
+            .child('$filename')
+            .putFile(file)
+            .whenComplete(() {
+          setState(() {
+            loader = false;
+          });
+        });
+
+        var downloadUrl = await snapshot.ref.getDownloadURL();
+
+        imageUrl = downloadUrl;
+        print(imageUrl);
+        onSendMessage();
+      } else {
+        print('No Path Received');
+      }
+    } else {
+      print('Grant Permissions and try again');
+    }
+  }*/
+
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    final grey = const Color(0xFFe0e3e3).withOpacity(0.5);
+    return Container(
+      height: 80, //50
+      width: width,
+      decoration: BoxDecoration(color: Colors.transparent),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: width * 0.03, vertical: height * 0.014), //12 12
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  type = 'forumDoubt';
+                });
+                uploadImage();
+              },
+              child: Container(
+                height: height * 0.028, //24
+                child: SvgPicture.asset('assets/paperclip.svg'),
+              ),
+            ),
+            SizedBox(
+              width: width * 0.025, //10
+            ),
+            Flexible(
+              /*height: 50,
+              width: 200,*/
+              child: TextFormField(
+                controller: message,
+                style: TextStyle(
+                    fontFamily: "Montserrat",
+                    fontSize: width * 0.045, //18
+                    color: Colors.black),
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    hintStyle: TextStyle(
+                        fontFamily: "Montserrat",
+                        fontSize: width * 0.045, //18
+                        color: Colors.black.withOpacity(0.3)),
+                    hintText: "Type Something ....."),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  type = 'message';
+                });
+                if (widget.docId != null) {
+                  onProvideSolution(widget.docId);
+                }
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: height * 0.058, //50
+                  width: width * 0.101, //40
+                  child: Text(
+                    'Send',
+                    style: TextStyle(
+                        fontFamily: "MontserratM",
+                        fontSize: width * 0.035, //14
+                        color: Colors.black),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
