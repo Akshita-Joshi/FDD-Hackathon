@@ -7,9 +7,9 @@ Project Submission for FDD Dart and Flutter Student Hackathon 2021
 by Team Invofinity
 
 ###### Team members-
-Durgesh Kudalkar
-Varun Lohade
-Akshita Joshi
+Durgesh Kudalkar  
+Varun Lohade  
+Akshita Joshi  
 
 ---------------------------------------------------------------------------------------------
 
