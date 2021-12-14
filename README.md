@@ -65,7 +65,8 @@ Eg. If FY class Student has asked a doubt, it's only shown in the FY Tab of Teac
 ## Quiz-
 Please choose Machine Learning Quiz for testing Quiz feature.
 
-###### **Note- Because of time constraints of hackathon, sending and receiving images feature is not
+## Note- 
+###### Because of time constraints of hackathon, sending and receiving images feature is not
 ######                properly developed, sending images can lead to some minor bugs.
 ######                If you start experiencing weird behaviour of chat after sending images, please try reinstalling  
 ######                the app.
@@ -75,7 +76,8 @@ Please choose Machine Learning Quiz for testing Quiz feature.
       
          
 
-###### **Note- Also when you press request meet button, it actually copy pastes a meet link into the text 
+## Note- 
+######   Also when you press request meet button, it actually copy pastes a meet link into the text 
 ######                 input field, and you can then send the meet link. But sometimes the meet link won't work.
 
    
@@ -83,7 +85,8 @@ Please choose Machine Learning Quiz for testing Quiz feature.
 
    
 
-###### **Note- There is no logout button for teacher, so we recommend to clear app data incase you want
+## Note- 
+###### There is no logout button for teacher, so we recommend to clear app data incase you want
 ######                to logout of teacher account.
 
 -------------------------------------------------------------------------------------------------
