@@ -70,8 +70,18 @@ Please choose Machine Learning Quiz for testing Quiz feature.
 ######                If you start experiencing weird behaviour of chat after sending images, please try reinstalling  
 ######                the app.
 
+
+   
+      
+         
+
 ###### **Note- Also when you press request meet button, it actually copy pastes a meet link into the text 
 ######                 input field, and you can then send the meet link. But sometimes the meet link won't work.
+
+   
+      
+
+   
 
 ###### **Note- There is no logout button for teacher, so we recommend to clear app data incase you want
 ######                to logout of teacher account.
